@@ -1,0 +1,237 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*google font*/
+.barlow-semi-condensed-regular {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+
+/*vars*/
+:root {
+    --violet: hsl(263, 55%, 52%);
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --dark-grayish-blue-70: hsl(217, 19%, 35%, 0.7);
+    --dark-grayish-blue-50: hsl(217, 19%, 35%, 0.5);
+    --dark-blackish-blue: hsl(219, 29%, 14%);
+    --dark-blackish-blue-50: hsl(219, 29%, 14%, 0.5);
+    --dark-blackish-blue-70: hsl(219, 29%, 14%, 0.7);
+
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --white-70: rgba(255, 255, 255, 0.7);
+    --white-50: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+    }
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+}
+
+
+
+/*main styling*/
+body {
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: var(--light-grayish-blue);
+}
+
+img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.reviewer {
+    font-size: 1rem;
+}
+
+
+
+
+/*grid control*/
+.grid {
+    max-width: 80rem;
+    font-size: 13px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+
+/*content styling*/
+.card {
+    display: grid;
+    gap: 1rem;
+    border-radius: .5rem;
+    padding: 1.8rem;
+}
+
+h2 {
+    color: var(--white);
+    font-size: 1.4rem;
+    line-height: 1.1;
+}
+
+.info p {
+    color: var(--white);
+}
+
+.card > p:last-of-type {
+    font-size: 1rem;
+  }
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/*specific cards*/
+.daniel {
+    background-color: var(--violet);
+    
+}
+    .daniel img {
+        border: solid hsl(263, 87%, 69%);
+    }
+    .daniel .vg {
+        color: var(--white-50);
+    }
+    .daniel .review {
+        color: var(--white-70);
+    }
+
+
+.jonathan {
+    background-color: var(--dark-grayish-blue);
+}
+
+    .jonathan .review {
+        color: var(--white-70);
+    }
+    
+    .jonathan img {
+        border: solid var(--white-70);
+    }
+
+
+.patrick {
+    background-color: var(--dark-blackish-blue);
+    color: var(--white);
+}
+    .patrick .review {
+        color: var(--white-70);
+    }
+    .patrick img {
+        border: solid hsl(263, 53%, 46%);
+    }
+
+
+.jeanette, .kira {
+    background-color: var(--white);
+}
+
+
+.jeanette .reviewer {
+    color: var(--dark-grayish-blue);
+}
+    .jeanette h2 {
+        color: var(--dark-grayish-blue);
+    }
+    .jeanette .vg {
+        color: var(--dark-grayish-blue-50);
+    }
+    .jeanette .review {
+        color: var(--dark-grayish-blue-70);
+    }
+
+
+.kira .reviewer {
+    color: var(--dark-grayish-blue);
+}
+    .kira .vg {
+        color: var(--dark-grayish-blue-50);
+    }
+    .kira h2 {
+        color: var(--dark-grayish-blue);
+    }
+    .kira .review {
+        color: var(--dark-grayish-blue-70);
+    }
+
+
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            'daniel daniel jon kira'
+            'jeanette patrick patrick kira';
+    }
+    
+    .daniel {
+        grid-area: daniel;
+    }
+    .jon {
+        grid-area: jon;
+    }
+    .patrick {
+        grid-area: patrick;
+    }
+    .jeanette {
+        grid-area: jeanette;
+    }
+    .kira {
+        grid-area: kira;
+    }
+}
