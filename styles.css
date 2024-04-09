@@ -93,7 +93,12 @@ img {
 }
 
 
-
+.grid-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*grid control*/
 .grid {
@@ -102,7 +107,6 @@ img {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin: 0 auto;
 }
 
 
@@ -211,6 +215,9 @@ h2 {
 
 
 @media (min-width: 900px) {
+    body {
+        padding: 0;
+    }
     .grid {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
